@@ -1,5 +1,5 @@
 ---
-name: dev-worklog
+name: worklog
 description: Aggregate Git commits, local logs, and notes into daily or weekly work reports. Use for work summaries, Git activity reviews, and concise, detailed, or value-focused reports. Do not invent work or perform Git writes.
 ---
 
@@ -35,13 +35,13 @@ Use the detailed style when the user does not specify one. If no repository is s
 Run the following command from the current workspace. Go is required; the collector uses only the Go standard library and runs without a `go.mod` file. Quote every path and text argument that contains spaces.
 
 ```powershell
-go run ".trae/skills/dev-worklog/scripts/collect_worklog.go" --period weekly --reference-date 2026-11-20 --repo "D:\path\project-a" --repo "D:\path\project-b" --log-file "D:\path\debug.log" --note "Completed requirement review; API integration is planned for next week"
+go run ".trae/skills/worklog/scripts/collect_worklog.go" --period weekly --reference-date 2026-11-20 --repo "D:\path\project-a" --repo "D:\path\project-b" --log-file "D:\path\debug.log" --note "Completed requirement review; API integration is planned for next week"
 ```
 
 Custom period example:
 
 ```powershell
-go run ".trae/skills/dev-worklog/scripts/collect_worklog.go" --period custom --start 2026-11-01 --end 2026-11-15 --repo "D:\path\project-a" --author "zhangsan"
+go run ".trae/skills/worklog/scripts/collect_worklog.go" --period custom --start 2026-11-01 --end 2026-11-15 --repo "D:\path\project-a" --author "zhangsan"
 ```
 
 The script writes JSON only to standard output and does not create a report file. Its main fields are:
